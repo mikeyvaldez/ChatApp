@@ -10,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Login from "../components/Login";
+import Signup from "../components/Signup";
 
 export default function HomePage() {
   const { colorMode } = useColorMode();
@@ -46,7 +47,7 @@ export default function HomePage() {
             <TabPanel>
               <Login />
             </TabPanel>
-            <TabPanel>{/* <Signup /> */}</TabPanel>
+            <TabPanel><Signup /></TabPanel>
           </TabPanels>
         </Tabs>
       </Box>

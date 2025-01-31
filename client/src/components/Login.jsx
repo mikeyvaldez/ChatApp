@@ -1,7 +1,11 @@
 import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react";
+import { useState } from "react";
 
 
 export default function Login() {
+    const [show, setShow] = useState(false);
+  
+    const handleShow = () => setShow(!show)
   return (
     <VStack spacing="5px">
         <FormControl id="loginEmail" isRequired>
@@ -12,12 +16,10 @@ export default function Login() {
         <FormControl id="loginPassword" isRequired>
             <FormLabel>Password</FormLabel>
             <InputGroup size="md">
-          <Input
-            placeholder='Enter Your Password'
-          />
-          <InputRightElement width="4.5rem">
-            <Button height="1.75rem" size="sm">  
-                Show            
+            <Input type={show ? "text" : "password"} placeholder="Enter Your Password" />
+          <InputRightElement width="4.5rem" onClick={handleShow}>
+            <Button height="1.75rem" size="sm">
+              {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
